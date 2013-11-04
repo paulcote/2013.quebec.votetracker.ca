@@ -27,6 +27,7 @@ function buildHtmlFromData(data){
 	var length = data.ville.postes.length,
 	    poste = null;
 	var output = "";
+	output += '<a href="https://github.com/paulcote/qc_election_results"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>';
 	for (var i = 0; i < length; i++) {
 		poste = data.ville.postes[i];
 		
