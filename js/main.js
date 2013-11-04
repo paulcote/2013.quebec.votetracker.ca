@@ -49,7 +49,13 @@ function buildHtmlFromData(data){
 		output += "</div><ul>";
 		
 		var length2 = poste.candidats.length,
-		    candidat = null;
+		    candidat = null, totalVotes = parseInt(poste.nb_votes_rejet);
+		for (var ii = 0; ii < length2; ii++) {
+			totalVotes += parseInt(poste.candidats[ii].nb_vote);
+		}
+		for (var ii = 0; ii < length2; ii++) {
+			poste.candidats[ii].percent = Math.round(poste.candidats[ii].nb_vote/totalVotes)*100);
+		}
 		for (var ii = 0; ii < length2; ii++) {
 			candidat = poste.candidats[ii];
 			
@@ -65,7 +71,7 @@ function buildHtmlFromData(data){
 				output += "<span class='name'><span>" + candidat.prenom + "</span> <strong>" + candidat.nom + "</strong></span>";
 				output += "<span class='image'><img src=''></span>";
 				output += "<div class='left'>";
-					output += "<span class='result'>" + candidat.nb_vote + "</span>";
+					output += "<span class='result'><strong>" + candidat.percent + "<strong> " + candidat.nb_vote + "</span>";
 					output += "<span class='team'>" + candidat.parti + "</span>";
 				output += "</div>";
 			output += "</li>";
@@ -77,7 +83,6 @@ function buildHtmlFromData(data){
 	output += "<p>Comprend des données ouvertes préliminaires octroyées le " + data.maj + " sous la licence d'utilisation des données ouvertes du ministère des Affaires municipales, des Régions et de l'Occupation du territoire disponible à l'adresse Web : <a href='http://www.electionsmunicipales.gouv.qc.ca'>http://www.electionsmunicipales.gouv.qc.ca</a>. L'octroi de la licence n'implique aucune approbation par le ministère des Affaires municipales, Régions et Occupation du territoire de l'utilisation des données ouvertes qui en est faite.</p>";
 	
 	$('body').html(output);
-	computePercentage();
 	
 	changeSlide();
 	setInterval(changeSlide, 5000);
