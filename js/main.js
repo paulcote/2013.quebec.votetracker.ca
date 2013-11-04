@@ -71,7 +71,7 @@ function buildHtmlFromData(data){
 				output += "<span class='name'><span>" + candidat.prenom + "</span> <strong>" + candidat.nom + "</strong></span>";
 				output += "<span class='image'><img src=''></span>";
 				output += "<div class='left'>";
-					output += "<span class='result'><strong>" + candidat.percent + "<strong>% " + candidat.nb_vote + "</span>";
+					output += "<span class='result'><strong>" + candidat.percent + "</strong>% " + candidat.nb_vote + "</span>";
 					output += "<span class='team'>" + candidat.parti + "</span>";
 				output += "</div>";
 			output += "</li>";
