@@ -43,7 +43,7 @@ function buildHtmlFromData(data){
 			output += "<h1>Poste de <strong>maire</strong><h1>";
 		}
 		else{
-			output += "<h1>Conseiller <strong>" + poste.nom.replace('-', '<wbr>-') + "</strong></h1>";
+			output += "<h1>Conseiller <strong>" + poste.nom.replace(/\-/g, '<wbr>-') + "</strong></h1>";
 		}
 		
 		output += "</div><ul>";
