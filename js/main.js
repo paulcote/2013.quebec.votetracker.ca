@@ -77,7 +77,22 @@ function buildHtmlFromData(data){
 	output += "<p>Comprend des données ouvertes préliminaires octroyées le " + data.maj + " sous la licence d'utilisation des données ouvertes du ministère des Affaires municipales, des Régions et de l'Occupation du territoire disponible à l'adresse Web : <a href='http://www.electionsmunicipales.gouv.qc.ca'>http://www.electionsmunicipales.gouv.qc.ca</a>. L'octroi de la licence n'implique aucune approbation par le ministère des Affaires municipales, Régions et Occupation du territoire de l'utilisation des données ouvertes qui en est faite.</p>";
 	
 	$('body').html(output);
+	computePercentage();
 	
 	changeSlide();
 	setInterval(changeSlide, 5000);
+}
+
+function computePercentage(){
+	
+	$('section').each(function(){
+		var totalVotes = 0;
+		$(this).find('li .result').each(function(){
+			totalVotes += parseInt($(this).text());
+		});
+		
+		$(this).find('li .result').each(function(){
+			$(this).prepend("<strong>" + ((parseInt($(this).text())/totalVotes)*100) + "</strong>%")
+		});
+	});
 }
