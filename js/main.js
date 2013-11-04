@@ -54,7 +54,7 @@ function buildHtmlFromData(data){
 			totalVotes += parseInt(poste.candidats[ii].nb_vote);
 		}
 		for (var ii = 0; ii < length2; ii++) {
-			poste.candidats[ii].percent = Math.round(poste.candidats[ii].nb_vote/totalVotes)*100);
+			poste.candidats[ii].percent = Math.round((poste.candidats[ii].nb_vote/totalVotes)*100);
 		}
 		for (var ii = 0; ii < length2; ii++) {
 			candidat = poste.candidats[ii];
