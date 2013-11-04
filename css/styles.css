@@ -111,13 +111,13 @@ section{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050d19', endColorstr='#4d040a14',GradientType=0 ); /* IE6-9 */
 	
 	
-	width: 800px;
-	height: 500px;
+	width: 900px;
+	height: 600px;
 	top: 50%;
 	left: 50%;
 	position: absolute;
-	margin-top: -250px;
-	margin-left: -400px;
+	margin-top: -300px;
+	margin-left: -450px;
 	overflow: hidden;
 	
 	opacity: 0;
