@@ -92,7 +92,7 @@ function computePercentage(){
 		});
 		
 		$(this).find('li .result').each(function(){
-			$(this).prepend("<strong>" + ((parseInt($(this).text())/totalVotes)*100) + "</strong>%")
+			$(this).prepend("<strong>" + Math.round((parseInt($(this).text())/totalVotes)*100) + "</strong>%")
 		});
 	});
 }
